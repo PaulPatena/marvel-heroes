@@ -1,0 +1,72 @@
+@import "../Shared.scss";
+
+$card-width: 100%;
+$thumbnail-height: 250px;
+$image-highlight-scale: 1.2;
+$transition-duration: .2s;
+$hero-name-height: 70px;
+
+.hero-thumbnail-wrapper {
+  width: $card-width;
+  height: $thumbnail-height;
+  overflow: hidden;
+}
+
+.hero-thumbnail {
+  width: $card-width;
+  height: $thumbnail-height;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: transform $transition-duration ease-in-out;
+}
+
+.hero-card {
+  cursor: pointer;
+  display: inline-block;
+  margin: auto;
+  animation: fadeInAnimation ease 1s;
+  animation-fill-mode: forwards;
+
+  &:focus {
+    /* Remove the default accesibility, we will use a red bar instead */
+    outline: 0;
+  }
+
+  &:hover, &:focus {
+    box-shadow: -3px -3px 3px 1px $marvel-red;
+  }
+
+  &:hover .hero-thumbnail {
+    transform: scale($image-highlight-scale);
+  }
+
+  &:focus .hero-thumbnail {
+    transform: scale($image-highlight-scale);
+  }
+}
+
+.bar-separator {
+  border-top: 4px solid $marvel-red;
+}
+
+.hero-name-wrapper {
+  width: $card-width;
+  height: $hero-name-height;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  @include marvel-info-bar;
+}
+
+.hero-name {
+  padding: 16px 16px;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

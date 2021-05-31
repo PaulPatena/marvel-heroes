@@ -1,0 +1,8 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(192px, 1fr) );
+  justify-content: center;
+  gap: 16px;
+  margin: 16px;
+  padding: initial;
+}

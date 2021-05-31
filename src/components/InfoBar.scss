@@ -1,0 +1,9 @@
+@import "../Shared.scss";
+
+.info-bar {
+  @include marvel-info-bar;
+  font-size: 24px;
+  padding: 16px;
+  margin: 16px;
+  display: inline-block;
+}

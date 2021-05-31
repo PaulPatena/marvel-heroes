@@ -1,0 +1,17 @@
+$marvel-red: #E62429;
+$marvel-black: #151515;
+
+@mixin marvel-info-bar {
+  background: $marvel-black;
+  color: white;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 12px solid white;
+    border-left: 12px solid $marvel-black;
+  }
+}
